@@ -1,0 +1,35 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "zalando-100",
+  "guide": "style-guides:zalando",
+  "level": "MUST",
+  "title": "Follow API First Principle",
+  "summary": "Define the API contract (typically OpenAPI) before writing implementation code and circulate it for peer review. The API specification is the deliverable, not a side-effect of the code.",
+  "category": "API First",
+  "rationale": "API First decouples consumer experience from the internal implementation, makes the design reviewable before code is written, and enforces that the contract is intentional rather than emergent.",
+  "appliesTo": ["REST", "Events"],
+  "sourceUrl": "https://opensource.zalando.com/restful-api-guidelines/#100",
+  "references": [
+    {
+      "url": "https://opensource.zalando.com/restful-api-guidelines/#api-first",
+      "title": "Zalando: API First principle",
+      "type": "StyleGuide"
+    }
+  ],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "yaml",
+      "snippet": "openapi: 3.1.0\ninfo:\n  title: Orders API\n  version: '1.0'\npaths:\n  /orders:\n    get:\n      summary: List Orders",
+      "note": "OpenAPI 3 document written before the service implementation begins."
+    },
+    {
+      "kind": "bad",
+      "language": "text",
+      "snippet": "Service implemented first, OpenAPI exported from code annotations after the fact.",
+      "note": "Code-first deviates from API First when the spec is treated as documentation rather than contract."
+    }
+  ],
+  "relatedRules": ["aip-1", "ms-graph-design-approach"],
+  "tags": ["API First", "Governance", "OpenAPI"]
+}

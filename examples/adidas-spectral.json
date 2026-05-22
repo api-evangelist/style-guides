@@ -1,0 +1,17 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "adidas-spectral",
+  "guide": "style-guides:adidas",
+  "level": "MUST",
+  "title": "Validate Specifications With the Adidas Spectral Ruleset",
+  "summary": "OpenAPI and AsyncAPI specifications must pass the Spectral ruleset that ships with the adidas API Guidelines. The ruleset operationalizes the prose guidelines for automated CI gating.",
+  "category": "Governance",
+  "rationale": "Prose style guides without a linter become advisory; bundling Spectral rules with the document turns the guide into an executable contract.",
+  "appliesTo": ["REST", "AsyncAPI"],
+  "sourceUrl": "https://github.com/adidas/api-guidelines/tree/master/spectral",
+  "spectralRule": {
+    "severity": "error"
+  },
+  "relatedRules": ["zalando-101"],
+  "tags": ["Spectral", "Governance", "AsyncAPI"]
+}

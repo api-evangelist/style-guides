@@ -1,0 +1,30 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "gitlab-summary-verbs",
+  "guide": "style-guides:gitlab",
+  "level": "SHOULD",
+  "title": "Start Operation Summaries With an Action Verb Aligned to the HTTP Method",
+  "summary": "REST API operation summaries should begin with an action verb that matches the HTTP method: Get, List, Create, Update, Delete. Summaries are limited to 120 characters.",
+  "category": "Documentation",
+  "rationale": "Verb-led summaries scan readably in generated documentation and SDK method lists; pairing verb to method removes ambiguity about what the operation does.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://docs.gitlab.com/ee/development/api_styleguide.html",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "yaml",
+      "snippet": "summary: List Issues for the Authenticated User"
+    },
+    {
+      "kind": "bad",
+      "language": "yaml",
+      "snippet": "summary: returns a paginated array of issue records for the currently authenticated user, optionally filtered..."
+    }
+  ],
+  "spectralRule": {
+    "given": "$.paths[*][*].summary",
+    "then": { "function": "pattern", "functionOptions": { "match": "^(Get|List|Create|Update|Delete|Replace|Patch|Search|Cancel|Approve|Reject) " } },
+    "severity": "warn"
+  },
+  "tags": ["Documentation", "GitLab"]
+}

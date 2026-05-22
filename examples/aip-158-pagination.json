@@ -1,0 +1,21 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "aip-158",
+  "guide": "style-guides:google-aip",
+  "level": "MUST",
+  "title": "Paginate List Methods with page_size and page_token",
+  "summary": "List methods must accept page_size (int32) and page_token (string) request fields and return next_page_token in the response. An empty next_page_token indicates the end of the collection.",
+  "category": "Pagination",
+  "rationale": "Cursor-based pagination via opaque page_token avoids the offset-drift and consistency problems of skip/limit, and lets servers change indexing without breaking clients.",
+  "appliesTo": ["REST", "gRPC"],
+  "sourceUrl": "https://google.aip.dev/158",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "GET /v1/books?page_size=50&page_token=CiAKGjB4MTIzNDU2 HTTP/1.1"
+    }
+  ],
+  "relatedRules": ["ms-azure-pagination", "zalando-160"],
+  "tags": ["Pagination", "REST"]
+}

@@ -1,0 +1,230 @@
+name: API Style Guides Vocabulary
+description: >-
+  Controlled vocabulary used across the api-evangelist style-guides topic
+  index. Pairs each term with its plain-language definition, the style
+  guides that codify it, and the canonical reference (RFC, AIP, etc.)
+  where available. Designed to make rules from heterogeneous guides
+  cross-walkable.
+url: https://raw.githubusercontent.com/api-evangelist/style-guides/main/vocabulary/style-guides-vocabulary.yml
+modified: '2026-05-22'
+
+normativeKeywords:
+  description: >-
+    RFC 2119 / RFC 8174 keywords used across every guide to express
+    requirement levels. Every rule in this index is tagged with one of
+    these.
+  terms:
+    - term: MUST
+      definition: Absolute requirement; non-compliant implementations are non-conformant.
+      reference: https://www.rfc-editor.org/rfc/rfc2119
+    - term: MUST NOT
+      definition: Absolute prohibition.
+      reference: https://www.rfc-editor.org/rfc/rfc2119
+    - term: SHOULD
+      definition: There may exist valid reasons in particular circumstances to ignore this item, but the full implications must be understood and carefully weighed before doing so.
+      reference: https://www.rfc-editor.org/rfc/rfc2119
+    - term: SHOULD NOT
+      definition: Recommendation against, weighable against context.
+      reference: https://www.rfc-editor.org/rfc/rfc2119
+    - term: MAY
+      definition: Truly optional; vendor and consumer can choose either way.
+      reference: https://www.rfc-editor.org/rfc/rfc2119
+
+pillars:
+  description: >-
+    Cross-cutting concerns covered (with varying depth and stringency)
+    by virtually every API style guide.
+  terms:
+    - term: API First
+      definition: APIs are specified (typically in OpenAPI) before being implemented; the specification is the contract reviewed and shared with consumers.
+      coveredBy:
+        - style-guides:zalando
+        - style-guides:adidas
+        - style-guides:microsoft
+        - style-guides:google-aip
+      canonicalRule: zalando-100
+    - term: Resource Naming
+      definition: Conventions for nouns vs. verbs in path segments, singular vs. plural, casing (kebab-case vs. snake_case vs. camelCase).
+      coveredBy:
+        - style-guides:google-aip
+        - style-guides:zalando
+        - style-guides:paypal
+        - style-guides:microsoft
+        - style-guides:atlassian
+      canonicalRule: aip-122
+    - term: URI Design
+      definition: How resources are mapped to URL paths, query parameters, and path versioning.
+      coveredBy:
+        - style-guides:paypal
+        - style-guides:zalando
+        - style-guides:atlassian
+        - style-guides:cisco
+    - term: HTTP Method Semantics
+      definition: When to use GET, POST, PUT, PATCH, DELETE; safety and idempotency expectations.
+      coveredBy:
+        - style-guides:microsoft
+        - style-guides:paypal
+        - style-guides:gitlab
+        - style-guides:zalando
+    - term: HTTP Status Codes
+      definition: Canonical mapping of operation outcomes to 2xx / 3xx / 4xx / 5xx codes.
+      coveredBy:
+        - style-guides:atlassian
+        - style-guides:google-aip
+        - style-guides:paypal
+        - style-guides:zalando
+      canonicalRule: aip-193
+    - term: Errors
+      definition: Structured error response body; whether RFC 9457 application/problem+json is used, and what additional fields (code, target, innererror) are required.
+      coveredBy:
+        - style-guides:microsoft
+        - style-guides:google-aip
+        - style-guides:heroku
+        - style-guides:paypal
+        - style-guides:ietf-httpapi
+      canonicalRule: rfc-9457
+    - term: Pagination
+      definition: Strategy for paging long collections — page+pageSize, offset+limit, cursor/nextLink, or Range header.
+      coveredBy:
+        - style-guides:google-aip
+        - style-guides:zalando
+        - style-guides:microsoft
+        - style-guides:heroku
+      canonicalRule: aip-158
+    - term: Filtering
+      definition: Syntax for restricting collections (AIP-160 filter expressions, OData $filter, query parameters).
+      coveredBy:
+        - style-guides:google-aip
+        - style-guides:microsoft
+      canonicalRule: aip-160
+    - term: Versioning
+      definition: How breaking change is signaled — path version, header version (vendor media type), date-based api-version query.
+      coveredBy:
+        - style-guides:microsoft
+        - style-guides:google-aip
+        - style-guides:zalando
+        - style-guides:atlassian
+        - style-guides:heroku
+        - style-guides:paypal
+    - term: Deprecation
+      definition: How obsolescence is signaled to consumers (Deprecation header, Sunset header, docs, OpenAPI x-deprecated).
+      coveredBy:
+        - style-guides:zalando
+        - style-guides:gitlab
+        - style-guides:google-aip
+        - style-guides:ietf-httpapi
+      canonicalRule: rfc-9745
+    - term: Idempotency
+      definition: Operations that produce the same result regardless of how many times they are invoked; commonly enforced with an Idempotency-Key header on POSTs.
+      coveredBy:
+        - style-guides:microsoft
+        - style-guides:paypal
+        - style-guides:ietf-httpapi
+    - term: Hypermedia / HATEOAS
+      definition: Embedding navigable links in responses so clients can discover affordances.
+      coveredBy:
+        - style-guides:paypal
+        - style-guides:zalando
+        - style-guides:microsoft
+    - term: Security
+      definition: Authentication and authorization requirements; OAuth2 scopes, mTLS, HTTPS, secret handling.
+      coveredBy:
+        - style-guides:zalando
+        - style-guides:cisco
+        - style-guides:microsoft
+        - style-guides:adidas
+    - term: Rate Limiting
+      definition: How quota is communicated to clients (RateLimit-Remaining, Retry-After, 429 status).
+      coveredBy:
+        - style-guides:heroku
+        - style-guides:ietf-httpapi
+    - term: Long-Running Operations
+      definition: Pattern for async operations: 202 Accepted + Operation-Location header + status monitor resource.
+      coveredBy:
+        - style-guides:microsoft
+        - style-guides:google-aip
+    - term: Stability Levels
+      definition: Per-resource maturity markers (prototype / development / production) governing compatibility commitments.
+      coveredBy:
+        - style-guides:heroku
+        - style-guides:google-aip
+    - term: Documentation
+      definition: Required level of human-readable description on each operation, parameter, and schema.
+      coveredBy:
+        - style-guides:zalando
+        - style-guides:gitlab
+        - style-guides:google-aip
+    - term: Events / AsyncAPI
+      definition: Conventions for event types, payloads, schema registries, and event-driven choreography.
+      coveredBy:
+        - style-guides:zalando
+        - style-guides:adidas
+
+publisherCategories:
+  description: >-
+    Categorization of publishers, useful for filtering "who is this
+    relevant to."
+  terms:
+    - term: Hyperscaler
+      members:
+        - style-guides:microsoft
+        - style-guides:google-aip
+    - term: Open Source Vendor
+      members:
+        - style-guides:gitlab
+        - style-guides:kubernetes
+    - term: Commerce / Retail
+      members:
+        - style-guides:zalando
+        - style-guides:adidas
+        - style-guides:paypal
+    - term: Networking / Infrastructure
+      members:
+        - style-guides:cisco
+    - term: Productivity / Collaboration
+      members:
+        - style-guides:atlassian
+    - term: PaaS
+      members:
+        - style-guides:heroku
+    - term: Standards Body
+      members:
+        - style-guides:ietf-httpapi
+
+ietfReferences:
+  description: >-
+    IETF outputs that style guides increasingly cite normatively for
+    cross-vendor interoperability.
+  terms:
+    - id: rfc-9457
+      title: Problem Details for HTTP APIs
+      url: https://www.rfc-editor.org/rfc/rfc9457
+      status: Proposed Standard
+    - id: rfc-9652
+      title: The Link-Template HTTP Header Field
+      url: https://www.rfc-editor.org/rfc/rfc9652
+      status: Proposed Standard
+    - id: rfc-9745
+      title: The Deprecation HTTP Response Header Field
+      url: https://www.rfc-editor.org/rfc/rfc9745
+      status: Proposed Standard
+    - id: rfc-9727
+      title: 'api-catalog: A Well-Known URI and Link Relation to Help Discovery of APIs'
+      url: https://www.rfc-editor.org/rfc/rfc9727
+      status: Proposed Standard
+    - id: draft-httpapi-idempotency-key
+      title: The Idempotency-Key HTTP Header Field
+      url: https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
+      status: Expired 2025-10-15
+    - id: draft-httpapi-ratelimit-headers
+      title: RateLimit header fields for HTTP
+      url: https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/
+      status: Expired 2025-09-27
+    - id: rfc-2119
+      title: Key words for use in RFCs to Indicate Requirement Levels
+      url: https://www.rfc-editor.org/rfc/rfc2119
+      status: Best Current Practice
+    - id: rfc-8174
+      title: Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words
+      url: https://www.rfc-editor.org/rfc/rfc8174
+      status: Best Current Practice

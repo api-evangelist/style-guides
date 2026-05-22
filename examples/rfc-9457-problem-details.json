@@ -1,0 +1,29 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "rfc-9457",
+  "guide": "style-guides:ietf-httpapi",
+  "level": "RECOMMENDED",
+  "title": "Use Problem Details for HTTP API Error Responses",
+  "summary": "Errors returned by HTTP APIs should use the application/problem+json media type with a body containing type (URI), title, status, detail, and instance fields. Domain-specific extension members are allowed.",
+  "category": "Errors",
+  "rationale": "RFC 9457 supersedes RFC 7807 and gives every HTTP API a single, RFC-track error envelope so that cross-vendor tooling and clients can parse failures uniformly.",
+  "appliesTo": ["HTTP", "REST"],
+  "sourceUrl": "https://www.rfc-editor.org/rfc/rfc9457",
+  "references": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7807",
+      "title": "RFC 7807 (obsoleted by 9457)",
+      "type": "RFC"
+    }
+  ],
+  "supersedes": ["rfc-7807"],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "HTTP/1.1 403 Forbidden\nContent-Type: application/problem+json\n\n{\n  \"type\": \"https://example.com/probs/out-of-credit\",\n  \"title\": \"You do not have enough credit.\",\n  \"status\": 403,\n  \"detail\": \"Your current balance is 30, but that costs 50.\",\n  \"instance\": \"/account/12345/msgs/abc\"\n}"
+    }
+  ],
+  "relatedRules": ["aip-193", "ms-azure-error-response"],
+  "tags": ["Errors", "RFC", "IETF"]
+}

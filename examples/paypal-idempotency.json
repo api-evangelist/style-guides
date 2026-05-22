@@ -1,0 +1,28 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "paypal-idempotency",
+  "guide": "style-guides:paypal",
+  "level": "MUST",
+  "title": "Honor a Request-Id Header on POST for Idempotency",
+  "summary": "When a POST is repeated with the same client-generated request identifier (e.g. PayPal-Request-Id), the server must return the originally-created resource instead of creating a duplicate.",
+  "category": "Idempotency",
+  "rationale": "Payment systems cannot tolerate accidental duplication from client retries; an idempotency key on POST is the canonical defense.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://github.com/paypal/api-standards",
+  "references": [
+    {
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+      "title": "draft-ietf-httpapi-idempotency-key-header",
+      "type": "Spec"
+    }
+  ],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "POST /v1/payments HTTP/1.1\nPayPal-Request-Id: 7d6c1f30-2c2f-11ee-be56-0242ac120002\nContent-Type: application/json"
+    }
+  ],
+  "relatedRules": ["ms-azure-idempotency", "draft-httpapi-idempotency-key"],
+  "tags": ["Idempotency", "PayPal", "Payments"]
+}

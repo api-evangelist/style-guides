@@ -1,0 +1,21 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "aip-193",
+  "guide": "style-guides:google-aip",
+  "level": "MUST",
+  "title": "Use Standardized Error Model and Codes",
+  "summary": "Errors are returned with an HTTP status code and a structured body containing a numeric/code, message, and optional details. Service error codes map to a stable enumeration shared across Google APIs.",
+  "category": "Errors",
+  "rationale": "A consistent error shape across all APIs lets clients (and SDKs) handle failures uniformly regardless of which API surfaced them.",
+  "appliesTo": ["REST", "gRPC"],
+  "sourceUrl": "https://google.aip.dev/193",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "json",
+      "snippet": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Book 'publishers/123/books/999' was not found.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}"
+    }
+  ],
+  "relatedRules": ["rfc-9457", "ms-azure-error-response", "paypal-errors"],
+  "tags": ["Errors", "REST"]
+}

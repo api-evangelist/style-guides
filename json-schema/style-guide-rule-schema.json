@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/style-guides/main/json-schema/style-guide-rule-schema.json",
+  "title": "API Style Guide Rule",
+  "description": "A single normative rule extracted from a published API style guide (e.g. a Zalando numbered rule, a Google AIP, a Microsoft Guidelines section). Designed to make rules from heterogeneous guides comparable and lintable.",
+  "type": "object",
+  "required": ["id", "guide", "level", "title", "category"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier for the rule, unique within the guide. Examples: 'zalando-100', 'aip-131', 'ms-azure-versioning', 'rfc-9457'.",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "guide": {
+      "type": "string",
+      "description": "Identifier of the parent style guide. Should match an aid value in apis.yml.",
+      "examples": [
+        "style-guides:zalando",
+        "style-guides:google-aip",
+        "style-guides:microsoft",
+        "style-guides:paypal",
+        "style-guides:adidas",
+        "style-guides:cisco",
+        "style-guides:atlassian",
+        "style-guides:heroku",
+        "style-guides:gitlab",
+        "style-guides:kubernetes",
+        "style-guides:ietf-httpapi"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "description": "Normative strength of the rule. Aligned with RFC 2119 / RFC 8174 keywords.",
+      "enum": ["MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", "RECOMMENDED", "INFORMATIONAL"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Short imperative statement of the rule, in Title Case where idiomatic. e.g. 'Follow API First Principle', 'Use Title Case for Operation Summaries'.",
+      "minLength": 5
+    },
+    "summary": {
+      "type": "string",
+      "description": "One-paragraph plain-language summary of what the rule says and why it exists."
+    },
+    "category": {
+      "type": "string",
+      "description": "Functional area the rule governs.",
+      "enum": [
+        "Naming",
+        "URI Design",
+        "HTTP Methods",
+        "HTTP Headers",
+        "HTTP Status Codes",
+        "Errors",
+        "Pagination",
+        "Filtering",
+        "Versioning",
+        "Deprecation",
+        "Compatibility",
+        "Idempotency",
+        "Hypermedia",
+        "Security",
+        "Auth",
+        "Rate Limiting",
+        "Caching",
+        "Concurrency",
+        "Long-Running Operations",
+        "Events",
+        "Data Formats",
+        "JSON Payload",
+        "Documentation",
+        "API First",
+        "Governance",
+        "Discovery",
+        "Performance",
+        "Observability"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "description": "The motivating principle: why the guide adopts this rule. Often anchors to consumer experience, evolvability, or interoperability."
+    },
+    "appliesTo": {
+      "type": "array",
+      "description": "Which API surfaces the rule applies to.",
+      "items": {
+        "type": "string",
+        "enum": ["REST", "GraphQL", "AsyncAPI", "gRPC", "WebSocket", "Webhooks", "OData", "HTTP", "Kubernetes"]
+      },
+      "uniqueItems": true
+    },
+    "references": {
+      "type": "array",
+      "description": "Authoritative references the rule cites (RFCs, OpenAPI sections, other style guide rules).",
+      "items": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "title": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["RFC", "Spec", "StyleGuide", "Blog", "Repository", "Standard", "Article"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "examples": {
+      "type": "array",
+      "description": "Concrete good / bad examples illustrating the rule.",
+      "items": {
+        "type": "object",
+        "required": ["kind", "snippet"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["good", "bad"] },
+          "language": { "type": "string", "description": "Language of the snippet, e.g. http, json, yaml, openapi." },
+          "snippet": { "type": "string" },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "spectralRule": {
+      "type": "object",
+      "description": "Optional mapping to a Spectral lint rule that operationalizes this style guide rule against an OpenAPI document.",
+      "properties": {
+        "given": { "type": "string", "description": "JSONPath expression for the Spectral 'given' field." },
+        "then": { "type": "object", "description": "Spectral 'then' clause (function, field, severity)." },
+        "severity": { "type": "string", "enum": ["error", "warn", "info", "hint"] }
+      },
+      "additionalProperties": true
+    },
+    "supersedes": {
+      "type": "array",
+      "description": "IDs of older rules this rule replaces.",
+      "items": { "type": "string" }
+    },
+    "relatedRules": {
+      "type": "array",
+      "description": "Cross-references to rules in other guides that cover the same concern (e.g. errors).",
+      "items": { "type": "string" }
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Direct URL to the rule's section in its source style guide."
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form tags in Title Case.",
+      "items": { "type": "string" }
+    }
+  }
+}

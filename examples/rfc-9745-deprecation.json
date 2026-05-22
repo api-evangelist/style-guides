@@ -1,0 +1,28 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "rfc-9745",
+  "guide": "style-guides:ietf-httpapi",
+  "level": "RECOMMENDED",
+  "title": "Signal Deprecation With the Deprecation HTTP Response Header",
+  "summary": "Servers indicate that a resource or operation is deprecated by including a Deprecation response header whose value is an HTTP date or the literal token @1. A companion Sunset header (RFC 8594) communicates the planned removal date.",
+  "category": "Deprecation",
+  "rationale": "Out-of-band changelog announcements are easy for clients to miss; an HTTP response header gives every running client a programmatic, structured deprecation signal at the moment of the call.",
+  "appliesTo": ["HTTP", "REST"],
+  "sourceUrl": "https://www.rfc-editor.org/rfc/rfc9745",
+  "references": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8594",
+      "title": "RFC 8594 The Sunset HTTP Header Field",
+      "type": "RFC"
+    }
+  ],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "HTTP/1.1 200 OK\nDeprecation: @1688169600\nSunset: Wed, 31 Dec 2025 23:59:59 GMT\nLink: <https://api.example.com/v2/orders>; rel=\"successor-version\""
+    }
+  ],
+  "relatedRules": ["zalando-deprecation"],
+  "tags": ["Deprecation", "RFC", "IETF"]
+}

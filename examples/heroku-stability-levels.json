@@ -1,0 +1,28 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "heroku-stability-levels",
+  "guide": "style-guides:heroku",
+  "level": "MUST",
+  "title": "Annotate Every Resource With a Stability Level",
+  "summary": "Each Platform API resource is tagged with a stability attribute of prototype, development, or production. Only production resources are covered by the change-management policy; prototype and development resources may change without notice.",
+  "category": "Compatibility",
+  "rationale": "Stability levels give the platform room to experiment in public without violating the compatibility contract that production-tier customers depend on.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://devcenter.heroku.com/articles/platform-api-reference",
+  "references": [
+    {
+      "url": "https://devcenter.heroku.com/articles/api-compatibility-policy",
+      "title": "Heroku API Compatibility Policy",
+      "type": "StyleGuide"
+    }
+  ],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "json",
+      "snippet": "{\n  \"$schema\": \"http://json-schema.org/draft-04/hyper-schema\",\n  \"title\": \"Heroku Platform API - App\",\n  \"stability\": \"production\",\n  \"description\": \"An app represents the program that you would like to deploy and run on Heroku.\"\n}"
+    }
+  ],
+  "relatedRules": ["aip-181"],
+  "tags": ["Stability Levels", "Heroku", "Compatibility"]
+}

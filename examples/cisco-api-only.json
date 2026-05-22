@@ -1,0 +1,13 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "cisco-api-only",
+  "guide": "style-guides:cisco",
+  "level": "MUST",
+  "title": "Communicate Between Services Only Through Documented APIs",
+  "summary": "Cisco services must communicate with each other (and with partners) exclusively through their documented public APIs; no internal or undocumented pathways may be relied on.",
+  "category": "Governance",
+  "rationale": "Verbatim from the Cisco guide: 'Creating an internal set of APIs (de facto or explicitly) and a second set of partner APIs is a recipe for weak partner products, bugs in third-party integrations, and wasted effort developing and testing multiple pathways.'",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://github.com/CiscoDevNet/api-design-guide",
+  "tags": ["Governance", "API First", "Cisco"]
+}

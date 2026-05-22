@@ -1,0 +1,27 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "ms-azure-versioning",
+  "guide": "style-guides:microsoft",
+  "level": "MUST",
+  "title": "Use Date-Based api-version Query Parameter",
+  "summary": "Azure REST APIs are versioned via a required api-version query parameter using YYYY-MM-DD dates (optionally with a -preview suffix). Customers opt in to new versions; old versions remain available.",
+  "category": "Versioning",
+  "rationale": "Date-based versioning makes the chronological order of contracts obvious and lets services ship many small backward-compatible iterations without inflating major version numbers.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "GET /resourceGroups?api-version=2024-11-01 HTTP/1.1\nHost: management.azure.com"
+    },
+    {
+      "kind": "bad",
+      "language": "http",
+      "snippet": "GET /v2/resourceGroups HTTP/1.1",
+      "note": "Path-based major version is rejected by Azure guidelines in favor of api-version query."
+    }
+  ],
+  "relatedRules": ["zalando-version", "paypal-versioning"],
+  "tags": ["Versioning", "Azure"]
+}

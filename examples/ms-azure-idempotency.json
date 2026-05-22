@@ -1,0 +1,21 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "ms-azure-idempotency",
+  "guide": "style-guides:microsoft",
+  "level": "MUST",
+  "title": "All Service Operations Must Be Idempotent",
+  "summary": "Azure REST API Guidelines mandate that all service operations, including POST, must be idempotent. The same request submitted twice must produce the same observable outcome.",
+  "category": "Idempotency",
+  "rationale": "Cloud applications embrace failure; clients must be able to retry safely. Verbatim from the Azure Guidelines: 'Cloud applications embrace failure. Therefore, to enable customers to write fault-tolerant applications, all service operations (including POST) must be idempotent.'",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md",
+  "references": [
+    {
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+      "title": "draft-ietf-httpapi-idempotency-key-header",
+      "type": "Spec"
+    }
+  ],
+  "relatedRules": ["paypal-idempotency", "draft-httpapi-idempotency-key"],
+  "tags": ["Idempotency", "Azure", "Reliability"]
+}

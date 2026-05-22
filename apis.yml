@@ -1,0 +1,397 @@
+aid: style-guides
+name: API Style Guides
+description: >-
+  A landscape index of public API style guides published by leading
+  technology companies and standards bodies. API style guides codify
+  conventions for resource modeling, URI design, HTTP method use, status
+  codes, error formats, pagination, versioning, deprecation, idempotency,
+  hypermedia, and security so that APIs across an organization (or an
+  industry) behave consistently. This topic repo catalogs the canonical
+  industry style guides, compares the pillars each one chooses to mandate,
+  and provides a shared vocabulary and JSON Schema for describing
+  individual style guide rules.
+type: Index
+image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png
+tags:
+  - API Style Guides
+  - API Design
+  - API Governance
+  - REST
+  - OpenAPI
+  - Conventions
+  - Standards
+  - Documentation
+url: https://raw.githubusercontent.com/api-evangelist/style-guides/main/apis.yml
+created: '2026-05-22'
+modified: '2026-05-22'
+specificationVersion: '0.19'
+apis:
+  - aid: style-guides:microsoft
+    name: Microsoft REST API Guidelines
+    description: >-
+      Microsoft's organization-wide REST API design guidelines, originally
+      published in 2016 and now maintained as separate Azure and Microsoft
+      Graph guideline documents under the umbrella Guidelines.md. Licensed
+      CC BY 4.0 to encourage adoption beyond Microsoft.
+    humanURL: https://github.com/microsoft/api-guidelines
+    baseURL: https://raw.githubusercontent.com/microsoft/api-guidelines/vNext/
+    tags:
+      - REST
+      - Microsoft
+      - Azure
+      - Microsoft Graph
+      - OData
+    properties:
+      - type: StyleGuide
+        url: https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md
+      - type: AzureStyleGuide
+        url: https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md
+      - type: GraphStyleGuide
+        url: https://github.com/microsoft/api-guidelines/blob/vNext/graph/GuidelinesGraph.md
+      - type: License
+        url: https://github.com/microsoft/api-guidelines/blob/vNext/license.txt
+      - type: GitHubRepository
+        url: https://github.com/microsoft/api-guidelines
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+          publisher: Microsoft
+          license: CC BY 4.0
+          status: living
+  - aid: style-guides:google-aip
+    name: Google API Improvement Proposals (AIPs)
+    description: >-
+      Google's design review system, modeled on Python PEPs and Rust RFCs.
+      AIPs are numbered, individually reviewable design documents covering
+      resource-oriented design, standard methods, errors, pagination,
+      naming conventions, and long-running operations. Maintained at
+      aip.dev with content under CC BY 4.0 and code samples under
+      Apache-2.0.
+    humanURL: https://google.aip.dev/
+    baseURL: https://google.aip.dev/
+    tags:
+      - REST
+      - gRPC
+      - Resource-Oriented
+      - Google
+    properties:
+      - type: StyleGuide
+        url: https://google.aip.dev/
+      - type: GitHubRepository
+        url: https://github.com/aip-dev/google.aip.dev
+      - type: ContentLicense
+        url: https://creativecommons.org/licenses/by/4.0/
+      - type: CodeLicense
+        url: https://www.apache.org/licenses/LICENSE-2.0
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+            - gRPC
+          publisher: Google
+          license: CC BY 4.0 (content) / Apache-2.0 (code)
+          status: living
+          approxRules: 70+ (general AIPs)
+  - aid: style-guides:zalando
+    name: Zalando RESTful API and Event Guidelines
+    description: >-
+      The canonical open community style guide. Maintained by Zalando's
+      API Guild and widely cited as the reference implementation for an
+      API-First, OpenAPI-based REST and event-driven API program. Roughly
+      150+ numbered MUST/SHOULD/MAY rules covering REST basics, design,
+      operation, and AsyncAPI-style event types.
+    humanURL: https://opensource.zalando.com/restful-api-guidelines/
+    baseURL: https://opensource.zalando.com/restful-api-guidelines/
+    tags:
+      - REST
+      - Events
+      - API First
+      - OpenAPI
+      - Zalando
+    properties:
+      - type: StyleGuide
+        url: https://opensource.zalando.com/restful-api-guidelines/
+      - type: GitHubRepository
+        url: https://github.com/zalando/restful-api-guidelines
+      - type: SpectralRuleset
+        url: https://github.com/zalando/zally
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+            - Events
+          publisher: Zalando SE
+          license: CC BY 4.0
+          status: living
+          approxRules: 150+
+  - aid: style-guides:paypal
+    name: PayPal API Design Guidelines
+    description: >-
+      PayPal's API style guide covering service design principles, HTTP
+      methods, hypermedia, naming, URI structure, JSON schema and types,
+      error handling, versioning, and deprecation. The original repository
+      at github.com/paypal/api-standards was archived; the content is
+      preserved in community forks.
+    humanURL: https://github.com/paypal/api-standards
+    baseURL: https://raw.githubusercontent.com/KuSh/api-standards/master/
+    tags:
+      - REST
+      - HATEOAS
+      - PayPal
+      - Payments
+    properties:
+      - type: StyleGuide
+        url: https://github.com/paypal/api-standards
+      - type: ArchiveMirror
+        url: https://github.com/KuSh/api-standards
+      - type: PatternsLibrary
+        url: https://github.com/KuSh/api-standards/tree/master/patterns
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+          publisher: PayPal
+          license: not explicitly stated; CC-style sharing language in repo
+          status: archived (mirrored)
+  - aid: style-guides:adidas
+    name: adidas API Guidelines
+    description: >-
+      adidas group's API guidelines covering general principles, REST
+      conventions, and asynchronous (Kafka / AsyncAPI) event design. Ships
+      with a Spectral ruleset that validates both OpenAPI and AsyncAPI
+      specifications against the guideline. MIT licensed.
+    humanURL: https://github.com/adidas/api-guidelines
+    baseURL: https://raw.githubusercontent.com/adidas/api-guidelines/master/
+    tags:
+      - REST
+      - AsyncAPI
+      - Kafka
+      - adidas
+      - Spectral
+    properties:
+      - type: StyleGuide
+        url: https://github.com/adidas/api-guidelines
+      - type: SpectralRuleset
+        url: https://github.com/adidas/api-guidelines/tree/master/spectral
+      - type: GitHubRepository
+        url: https://github.com/adidas/api-guidelines
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+            - AsyncAPI
+          publisher: adidas
+          license: MIT
+          status: living
+  - aid: style-guides:cisco
+    name: Cisco REST API Design Guide
+    description: >-
+      Guidelines for Designing REST APIs at Cisco, developed across Cisco
+      DevNet, Collaboration, and the Application Platform Group. Emphasizes
+      "API-only" communication, aesthetic and behavioral consistency,
+      OAuth2 / HTTPS security, and avoidance of internal vs. partner API
+      bifurcation.
+    humanURL: https://github.com/CiscoDevNet/api-design-guide
+    baseURL: https://raw.githubusercontent.com/CiscoDevNet/api-design-guide/master/
+    tags:
+      - REST
+      - Cisco
+      - DevNet
+      - OAuth2
+    properties:
+      - type: StyleGuide
+        url: https://github.com/CiscoDevNet/api-design-guide
+      - type: GitHubRepository
+        url: https://github.com/CiscoDevNet/api-design-guide
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+          publisher: Cisco Systems
+          license: see repository (Cisco copyright 2015-2024)
+          status: living
+  - aid: style-guides:atlassian
+    name: Atlassian REST API Design Guidelines
+    description: >-
+      Atlassian's REST API design guidelines, applied across Jira,
+      Confluence, Crowd, and plugin REST modules. Defines URI conventions
+      (singular resources, versioned paths, expand/start-index/max-results
+      query parameters), HTTP method semantics, response codes, and
+      versioning policy.
+    humanURL: https://developer.atlassian.com/server/framework/atlassian-sdk/atlassian-rest-api-design-guidelines-version-1/
+    baseURL: https://developer.atlassian.com/
+    tags:
+      - REST
+      - Atlassian
+      - Jira
+      - Confluence
+    properties:
+      - type: StyleGuide
+        url: https://developer.atlassian.com/server/framework/atlassian-sdk/atlassian-rest-api-design-guidelines-version-1/
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+          publisher: Atlassian
+          license: documentation under Atlassian terms
+          status: v1 (legacy server framework)
+  - aid: style-guides:heroku
+    name: Heroku Platform API Design Conventions
+    description: >-
+      Heroku's design conventions for the Platform API, documented in the
+      Platform API Reference and the API Compatibility Policy. Notable for
+      versioned media types (application/vnd.heroku+json; version=3),
+      JSON Schema discovery via /schema, Range-based pagination, stability
+      levels (prototype / development / production), and structured error
+      payloads.
+    humanURL: https://devcenter.heroku.com/articles/platform-api-reference
+    baseURL: https://api.heroku.com
+    tags:
+      - REST
+      - Heroku
+      - JSON Schema
+      - Stability Levels
+    properties:
+      - type: StyleGuide
+        url: https://devcenter.heroku.com/articles/platform-api-reference
+      - type: CompatibilityPolicy
+        url: https://devcenter.heroku.com/articles/api-compatibility-policy
+      - type: JSONSchema
+        url: https://api.heroku.com/schema
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+          publisher: Heroku (Salesforce)
+          license: documentation under Heroku terms
+          status: living
+  - aid: style-guides:gitlab
+    name: GitLab API Style Guide
+    description: >-
+      GitLab's developer-facing API style guide for the REST API (v4) and
+      GraphQL API. Mandates Grape DSL parameter validation, Entity-based
+      response payloads, Title Case summary verbs aligned to HTTP method,
+      deprecation markers with migration guidance, and PATCH vs. PUT
+      semantics. CC BY-SA 4.0.
+    humanURL: https://docs.gitlab.com/ee/development/api_styleguide.html
+    baseURL: https://gitlab.com/api/v4/
+    tags:
+      - REST
+      - GraphQL
+      - GitLab
+      - Grape
+    properties:
+      - type: StyleGuide
+        url: https://docs.gitlab.com/ee/development/api_styleguide.html
+      - type: GraphQLStyleGuide
+        url: https://docs.gitlab.com/ee/development/api_graphql_styleguide.html
+      - type: License
+        url: https://creativecommons.org/licenses/by-sa/4.0/
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+            - GraphQL
+          publisher: GitLab
+          license: CC BY-SA 4.0
+          status: living
+  - aid: style-guides:kubernetes
+    name: Kubernetes API Conventions
+    description: >-
+      The Kubernetes API conventions document, maintained by SIG
+      Architecture. Defines the "kind / apiVersion" object envelope,
+      spec/status separation, resourceVersion-based optimistic concurrency,
+      list semantics, label and selector validation, and the patterns used
+      by every Kubernetes-native API (and by extension every CRD).
+    humanURL: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md
+    baseURL: https://github.com/kubernetes/community/
+    tags:
+      - REST
+      - Kubernetes
+      - SIG Architecture
+      - CRD
+    properties:
+      - type: StyleGuide
+        url: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md
+      - type: License
+        url: https://github.com/kubernetes/community/blob/master/LICENSE
+      - type: Scope
+        data:
+          surfaces:
+            - REST
+          publisher: Kubernetes / CNCF
+          license: Apache-2.0 (repo)
+          status: living
+  - aid: style-guides:ietf-httpapi
+    name: IETF HTTPAPI Working Group Drafts and RFCs
+    description: >-
+      The IETF httpapi Working Group is producing the cross-vendor
+      vocabulary that style guides increasingly cite normatively. Includes
+      RFC 9457 Problem Details for HTTP APIs, RFC 9652 Link-Template, RFC
+      9745 Deprecation header, RFC 9727 api-catalog, plus active drafts on
+      privacy and digest problem types and recently-expired drafts on
+      Idempotency-Key and RateLimit header fields.
+    humanURL: https://datatracker.ietf.org/wg/httpapi/documents/
+    baseURL: https://datatracker.ietf.org/
+    tags:
+      - IETF
+      - HTTP
+      - REST
+      - Problem Details
+      - RateLimit
+      - Deprecation
+    properties:
+      - type: StandardsTrack
+        url: https://datatracker.ietf.org/wg/httpapi/documents/
+      - type: RFC
+        url: https://www.rfc-editor.org/rfc/rfc9457
+        name: RFC 9457 Problem Details for HTTP APIs
+      - type: RFC
+        url: https://www.rfc-editor.org/rfc/rfc9652
+        name: RFC 9652 The Link-Template HTTP Header Field
+      - type: RFC
+        url: https://www.rfc-editor.org/rfc/rfc9745
+        name: RFC 9745 The Deprecation HTTP Response Header Field
+      - type: RFC
+        url: https://www.rfc-editor.org/rfc/rfc9727
+        name: RFC 9727 api-catalog Well-Known URI
+      - type: ExpiredDraft
+        url: https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
+        name: draft-ietf-httpapi-idempotency-key-header
+      - type: ExpiredDraft
+        url: https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/
+        name: draft-ietf-httpapi-ratelimit-headers
+      - type: Scope
+        data:
+          surfaces:
+            - HTTP
+            - REST
+          publisher: IETF
+          license: IETF Trust (RFC) / public
+          status: mixed (RFCs + active drafts + expired drafts)
+common:
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/style-guides/main/json-schema/style-guide-rule-schema.json
+  - type: JSONLD
+    url: https://raw.githubusercontent.com/api-evangelist/style-guides/main/json-ld/style-guides-context.jsonld
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/style-guides/main/vocabulary/style-guides-vocabulary.yml
+  - type: Examples
+    url: https://github.com/api-evangelist/style-guides/tree/main/examples
+  - type: DeveloperPortal
+    url: https://developer.apievangelist.com/
+  - type: Network
+    url: https://developer.apievangelist.com/network/
+  - type: GitHubOrganization
+    url: https://github.com/api-evangelist
+  - type: RelatedTopic
+    url: https://github.com/api-evangelist/design-standards
+  - type: RelatedTopic
+    url: https://github.com/api-evangelist/rules
+  - type: RelatedTopic
+    url: https://github.com/api-evangelist/policies
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
+    X-github: kinlane

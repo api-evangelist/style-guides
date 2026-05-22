@@ -1,0 +1,21 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "paypal-hateoas",
+  "guide": "style-guides:paypal",
+  "level": "SHOULD",
+  "title": "Return Hypermedia Link Description Objects (HATEOAS)",
+  "summary": "Resource responses should include a 'links' array of Link Description Objects with href, rel, and optional method properties to expose the next legal actions the client can take.",
+  "category": "Hypermedia",
+  "rationale": "HATEOAS makes the API self-describing: clients can follow links rather than hard-coding URLs, which reduces coupling to URI structure changes.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://github.com/paypal/api-standards",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "json",
+      "snippet": "{\n  \"id\": \"PAY-1234\",\n  \"state\": \"approved\",\n  \"links\": [\n    { \"href\": \"https://api.paypal.com/v1/payments/payment/PAY-1234\", \"rel\": \"self\", \"method\": \"GET\" },\n    { \"href\": \"https://api.paypal.com/v1/payments/payment/PAY-1234/refund\", \"rel\": \"refund\", \"method\": \"POST\" }\n  ]\n}"
+    }
+  ],
+  "relatedRules": ["zalando-hypermedia"],
+  "tags": ["HATEOAS", "Hypermedia", "PayPal"]
+}

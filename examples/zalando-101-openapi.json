@@ -1,0 +1,26 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "zalando-101",
+  "guide": "style-guides:zalando",
+  "level": "MUST",
+  "title": "Provide API Specification Using OpenAPI",
+  "summary": "Every REST API at Zalando must be specified in OpenAPI. The OpenAPI document is the human- and machine-readable source of truth and is required for consumer review.",
+  "category": "Documentation",
+  "rationale": "A single specification format makes APIs lintable, mockable, and consumable by SDK generators and gateways without per-team divergence.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://opensource.zalando.com/restful-api-guidelines/#101",
+  "references": [
+    {
+      "url": "https://spec.openapis.org/oas/latest.html",
+      "title": "OpenAPI Specification",
+      "type": "Spec"
+    }
+  ],
+  "spectralRule": {
+    "given": "$",
+    "then": { "field": "openapi", "function": "truthy" },
+    "severity": "error"
+  },
+  "relatedRules": ["aip-191"],
+  "tags": ["OpenAPI", "Documentation"]
+}

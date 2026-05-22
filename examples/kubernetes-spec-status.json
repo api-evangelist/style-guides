@@ -1,0 +1,20 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "kubernetes-spec-status",
+  "guide": "style-guides:kubernetes",
+  "level": "MUST",
+  "title": "Separate Desired State (spec) From Observed State (status)",
+  "summary": "Every Kubernetes-style resource carries a spec subobject (user-supplied desired state) and a status subobject (controller-observed actual state). Clients write to spec; controllers write to status; never the reverse.",
+  "category": "Concurrency",
+  "rationale": "The spec/status split is the foundation of declarative APIs and the level-triggered reconciliation pattern that gives Kubernetes (and every CRD) its consistency model.",
+  "appliesTo": ["REST", "Kubernetes"],
+  "sourceUrl": "https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "yaml",
+      "snippet": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: example\nspec:\n  containers:\n  - name: app\n    image: nginx:1.27\nstatus:\n  phase: Running\n  conditions:\n  - type: Ready\n    status: \"True\""
+    }
+  ],
+  "tags": ["Kubernetes", "Concurrency", "CRD"]
+}

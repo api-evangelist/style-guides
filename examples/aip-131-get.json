@@ -1,0 +1,39 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "aip-131",
+  "guide": "style-guides:google-aip",
+  "level": "MUST",
+  "title": "Standard Methods: Get",
+  "summary": "A Get method retrieves a single resource by its resource name. It maps to HTTP GET and the response body is the resource itself. There is no request body.",
+  "category": "HTTP Methods",
+  "rationale": "Resource-oriented design depends on every resource having a Get standard method with predictable shape so generated clients and tooling can rely on it.",
+  "appliesTo": ["REST", "gRPC"],
+  "sourceUrl": "https://google.aip.dev/131",
+  "references": [
+    {
+      "url": "https://google.aip.dev/121",
+      "title": "AIP-121 Resource-oriented design",
+      "type": "StyleGuide"
+    },
+    {
+      "url": "https://google.aip.dev/122",
+      "title": "AIP-122 Resource names",
+      "type": "StyleGuide"
+    }
+  ],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "GET /v1/publishers/123/books/456 HTTP/1.1\nHost: api.example.com\nAccept: application/json"
+    },
+    {
+      "kind": "bad",
+      "language": "http",
+      "snippet": "POST /v1/getBook HTTP/1.1\nContent-Type: application/json\n\n{\"name\":\"publishers/123/books/456\"}",
+      "note": "Using POST and a body for a read violates the standard Get method shape."
+    }
+  ],
+  "relatedRules": ["zalando-138"],
+  "tags": ["REST", "Resource-Oriented", "GET"]
+}

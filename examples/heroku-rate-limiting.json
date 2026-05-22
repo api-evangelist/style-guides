@@ -1,0 +1,34 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "heroku-rate-limiting",
+  "guide": "style-guides:heroku",
+  "level": "MUST",
+  "title": "Expose Remaining Quota Via RateLimit-Remaining Header",
+  "summary": "The Heroku Platform API allows up to 4,500 request tokens per account, replenished at ~75 tokens per minute. Clients must check the RateLimit-Remaining response header and back off; over-quota requests return 429 Too Many Requests.",
+  "category": "Rate Limiting",
+  "rationale": "Returning the remaining-quota signal in every response lets clients self-throttle gracefully instead of being surprised by 429s.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://devcenter.heroku.com/articles/platform-api-reference#rate-limits",
+  "references": [
+    {
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/",
+      "title": "IETF draft-ietf-httpapi-ratelimit-headers",
+      "type": "Spec"
+    }
+  ],
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "HTTP/1.1 200 OK\nRateLimit-Remaining: 2400\nContent-Type: application/vnd.heroku+json; version=3"
+    },
+    {
+      "kind": "good",
+      "language": "json",
+      "snippet": "{\n  \"id\": \"rate_limit\",\n  \"message\": \"Your account reached the API rate limit\",\n  \"url\": \"https://devcenter.heroku.com/articles/platform-api-reference#rate-limits\"\n}",
+      "note": "429 error response body."
+    }
+  ],
+  "relatedRules": ["draft-httpapi-ratelimit-headers"],
+  "tags": ["Rate Limiting", "Heroku"]
+}

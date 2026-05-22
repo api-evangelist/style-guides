@@ -1,0 +1,26 @@
+{
+  "$schema": "../json-schema/style-guide-rule-schema.json",
+  "id": "atlassian-uri-conventions",
+  "guide": "style-guides:atlassian",
+  "level": "MUST",
+  "title": "Use Singular Resource Names With Versioned Paths",
+  "summary": "Atlassian REST APIs use singular resource names: GET /foo returns a list, GET /foo/{key} returns one. Versioned paths follow /rest/{namespace}/{version}/{resource} with standard query parameters expand, start-index, and max-results.",
+  "category": "URI Design",
+  "rationale": "A consistent URL grammar across Atlassian products (Jira, Confluence, Crowd) reduces cognitive load for integrators who span multiple products.",
+  "appliesTo": ["REST"],
+  "sourceUrl": "https://developer.atlassian.com/server/framework/atlassian-sdk/atlassian-rest-api-design-guidelines-version-1/",
+  "examples": [
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "GET /rest/api/2/issue/PROJ-123?expand=changelog HTTP/1.1\nHost: jira.example.com"
+    },
+    {
+      "kind": "good",
+      "language": "http",
+      "snippet": "GET /rest/api/2/issue?start-index=0&max-results=50 HTTP/1.1"
+    }
+  ],
+  "relatedRules": ["zalando-uri", "paypal-uri"],
+  "tags": ["URI Design", "Atlassian", "Pagination"]
+}

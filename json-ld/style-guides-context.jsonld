@@ -1,0 +1,113 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.apievangelist.com/style-guides/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "StyleGuide": "schema:TechArticle",
+    "StyleGuideRule": "https://schema.apievangelist.com/style-guides/StyleGuideRule",
+    "RuleCategory": "https://schema.apievangelist.com/style-guides/RuleCategory",
+    "RuleLevel": "https://schema.apievangelist.com/style-guides/RuleLevel",
+
+    "id": "@id",
+    "type": "@type",
+    "guide": {
+      "@id": "https://schema.apievangelist.com/style-guides/guide",
+      "@type": "@id"
+    },
+    "publisher": {
+      "@id": "schema:publisher",
+      "@type": "schema:Organization"
+    },
+    "license": "schema:license",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "sourceUrl": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "title": "schema:name",
+    "summary": "schema:abstract",
+    "rationale": "https://schema.apievangelist.com/style-guides/rationale",
+    "level": {
+      "@id": "https://schema.apievangelist.com/style-guides/level",
+      "@type": "@vocab"
+    },
+    "category": {
+      "@id": "https://schema.apievangelist.com/style-guides/category",
+      "@type": "@vocab"
+    },
+    "appliesTo": {
+      "@id": "https://schema.apievangelist.com/style-guides/appliesTo",
+      "@container": "@set"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@container": "@set"
+    },
+    "relatedRules": {
+      "@id": "https://schema.apievangelist.com/style-guides/relatedRules",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "supersedes": {
+      "@id": "dcterms:replaces",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "examples": {
+      "@id": "https://schema.apievangelist.com/style-guides/example",
+      "@container": "@set"
+    },
+    "spectralRule": "https://schema.apievangelist.com/style-guides/spectralRule",
+    "tags": {
+      "@id": "schema:keywords",
+      "@container": "@set"
+    },
+
+    "MUST": "https://schema.apievangelist.com/style-guides/Must",
+    "MUST_NOT": "https://schema.apievangelist.com/style-guides/MustNot",
+    "SHOULD": "https://schema.apievangelist.com/style-guides/Should",
+    "SHOULD_NOT": "https://schema.apievangelist.com/style-guides/ShouldNot",
+    "MAY": "https://schema.apievangelist.com/style-guides/May",
+    "RECOMMENDED": "https://schema.apievangelist.com/style-guides/Recommended",
+    "INFORMATIONAL": "https://schema.apievangelist.com/style-guides/Informational",
+
+    "Naming": "https://schema.apievangelist.com/style-guides/Naming",
+    "URIDesign": "https://schema.apievangelist.com/style-guides/URIDesign",
+    "HTTPMethods": "https://schema.apievangelist.com/style-guides/HTTPMethods",
+    "HTTPHeaders": "https://schema.apievangelist.com/style-guides/HTTPHeaders",
+    "HTTPStatusCodes": "https://schema.apievangelist.com/style-guides/HTTPStatusCodes",
+    "Errors": "https://schema.apievangelist.com/style-guides/Errors",
+    "Pagination": "https://schema.apievangelist.com/style-guides/Pagination",
+    "Filtering": "https://schema.apievangelist.com/style-guides/Filtering",
+    "Versioning": "https://schema.apievangelist.com/style-guides/Versioning",
+    "Deprecation": "https://schema.apievangelist.com/style-guides/Deprecation",
+    "Compatibility": "https://schema.apievangelist.com/style-guides/Compatibility",
+    "Idempotency": "https://schema.apievangelist.com/style-guides/Idempotency",
+    "Hypermedia": "https://schema.apievangelist.com/style-guides/Hypermedia",
+    "Security": "https://schema.apievangelist.com/style-guides/Security",
+    "Auth": "https://schema.apievangelist.com/style-guides/Auth",
+    "RateLimiting": "https://schema.apievangelist.com/style-guides/RateLimiting",
+    "Caching": "https://schema.apievangelist.com/style-guides/Caching",
+    "Concurrency": "https://schema.apievangelist.com/style-guides/Concurrency",
+    "LongRunningOperations": "https://schema.apievangelist.com/style-guides/LongRunningOperations",
+    "Events": "https://schema.apievangelist.com/style-guides/Events",
+    "DataFormats": "https://schema.apievangelist.com/style-guides/DataFormats",
+    "JSONPayload": "https://schema.apievangelist.com/style-guides/JSONPayload",
+    "Documentation": "https://schema.apievangelist.com/style-guides/Documentation",
+    "APIFirst": "https://schema.apievangelist.com/style-guides/APIFirst",
+    "Governance": "https://schema.apievangelist.com/style-guides/Governance",
+    "Discovery": "https://schema.apievangelist.com/style-guides/Discovery",
+    "Performance": "https://schema.apievangelist.com/style-guides/Performance",
+    "Observability": "https://schema.apievangelist.com/style-guides/Observability"
+  }
+}
