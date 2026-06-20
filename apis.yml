@@ -11,7 +11,7 @@ description: >-
   and provides a shared vocabulary and JSON Schema for describing
   individual style guide rules.
 type: Index
-image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png
+image: https://kinlane-images.s3.amazonaws.com/shared/api-evangelist-logos/api-evangelist-logo-butterfly.png
 tags:
 - API Style Guides
 - API Design
