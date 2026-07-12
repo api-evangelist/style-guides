@@ -373,6 +373,8 @@ apis:
       license: IETF Trust (RFC) / public
       status: mixed (RFCs + active drafts + expired drafts)
 common:
+- type: DomainSecurity
+  url: security/style-guides-domain-security.yml
 - type: JSONSchema
   url: https://raw.githubusercontent.com/api-evangelist/style-guides/main/json-schema/style-guide-rule-schema.json
 - type: JSONLD
