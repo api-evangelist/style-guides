@@ -11,6 +11,17 @@ description: >-
   and provides a shared vocabulary and JSON Schema for describing
   individual style guide rules.
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/api-evangelist-logos/api-evangelist-logo-butterfly.png
 tags:
 - API Style Guides
