@@ -139,7 +139,7 @@ pillars:
         - style-guides:heroku
         - style-guides:ietf-httpapi
     - term: Long-Running Operations
-      definition: Pattern for async operations: 202 Accepted + Operation-Location header + status monitor resource.
+      definition: "Pattern for async operations: 202 Accepted + Operation-Location header + status monitor resource."
       coveredBy:
         - style-guides:microsoft
         - style-guides:google-aip
