@@ -116,6 +116,12 @@ apis:
   baseURL: https://opensource.zalando.com/restful-api-guidelines/
   tags:
   - REST
+  - Event
+  - API-First
+  - OpenAPI
+  - Zalando
+  tags_raw:
+  - REST
   - Events
   - API First
   - OpenAPI
@@ -208,6 +214,11 @@ apis:
   tags:
   - REST
   - Cisco
+  - Devnet
+  - Authentication
+  tags_raw:
+  - REST
+  - Cisco
   - DevNet
   - OAuth2
   properties:
@@ -259,6 +270,11 @@ apis:
   humanURL: https://devcenter.heroku.com/articles/platform-api-reference
   baseURL: https://api.heroku.com
   tags:
+  - REST
+  - Heroku
+  - JSON-Schema
+  - Stability Levels
+  tags_raw:
   - REST
   - Heroku
   - JSON Schema
@@ -348,6 +364,13 @@ apis:
   humanURL: https://datatracker.ietf.org/wg/httpapi/documents/
   baseURL: https://datatracker.ietf.org/
   tags:
+  - IETF
+  - HTTP
+  - REST
+  - Problem Details
+  - Rate-Limit
+  - Deprecation
+  tags_raw:
   - IETF
   - HTTP
   - REST
