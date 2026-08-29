@@ -11,6 +11,17 @@ description: >-
   and provides a shared vocabulary and JSON Schema for describing
   individual style guide rules.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -407,6 +418,14 @@ apis:
       license: IETF Trust (RFC) / public
       status: mixed (RFCs + active drafts + expired drafts)
 common:
+- type: IssueTracker
+  url: https://github.com/microsoft/api-guidelines/issues
+- type: SecurityPolicy
+  url: https://github.com/microsoft/api-guidelines/blob/vNext/SECURITY.md
+- type: CodeOfConduct
+  url: https://github.com/microsoft/.github/blob/main/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/microsoft/api-guidelines/blob/vNext/CONTRIBUTING.md
 - type: DomainSecurity
   url: security/style-guides-domain-security.yml
 - type: JSONSchema
