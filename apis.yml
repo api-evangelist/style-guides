@@ -128,7 +128,7 @@ apis:
   tags:
   - REST
   - Event
-  - API-First
+  - API First
   - OpenAPI
   - Zalando
   tags_raw:
@@ -225,7 +225,7 @@ apis:
   tags:
   - REST
   - Cisco
-  - Devnet
+  - DevNet
   - Authentication
   tags_raw:
   - REST
@@ -379,7 +379,7 @@ apis:
   - HTTP
   - REST
   - Problem Details
-  - Rate-Limit
+  - RateLimit
   - Deprecation
   tags_raw:
   - IETF
