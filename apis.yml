@@ -13,14 +13,21 @@ description: >-
 type: Index
 deliveryModel:
   model: unknown
+  license_evidence:
+    not_product:
+    - adidas/api-guidelines
+    - aip-dev/google.aip.dev
+    - ciscodevnet/api-design-guide
+    - microsoft/api-guidelines
+    - zalando/restful-api-guidelines
   open_source: unknown
   commercial: false
   callable_host: false
   label: Delivery model not determined — needs a product licence on record
   confidence: low
   source:
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -284,13 +291,14 @@ apis:
   tags:
   - REST
   - Heroku
-  - JSON-Schema
+  - JSON Schema
   - Stability Levels
   tags_raw:
   - REST
   - Heroku
   - JSON Schema
   - Stability Levels
+  - JSON-Schema
   properties:
   - type: StyleGuide
     url: https://devcenter.heroku.com/articles/platform-api-reference
@@ -453,3 +461,4 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
   X-github: kinlane
+kind: topic
