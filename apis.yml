@@ -68,6 +68,12 @@ apis:
   tags:
   - REST
   - Microsoft
+  - Microsoft Azure
+  - Microsoft Graph
+  - OData
+  tags_raw:
+  - REST
+  - Microsoft
   - Azure
   - Microsoft Graph
   - OData
